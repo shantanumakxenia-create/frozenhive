@@ -54,6 +54,19 @@ const products = [
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false)
+  useEffect(() => {
+    let frame = 0
+    const updateScroll = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
+        document.documentElement.style.setProperty('--scroll-progress', `${Math.min(window.scrollY / Math.max(document.body.scrollHeight - window.innerHeight, 1), 1)}`)
+      })
+    }
+    updateScroll()
+    window.addEventListener('scroll', updateScroll, { passive: true })
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', updateScroll) }
+  }, [])
   return (
     <main className="site-shell">
       <header className="site-header">
@@ -102,6 +115,7 @@ export default function Page() {
       </section>
 
       <section className="industries section-pad" id="industries"><div className="page-width"><Reveal className="section-heading"><div><p className="eyebrow"><span className="eyebrow-dot" /> Where we make a difference</p><h2>Temperature control for <em>real work.</em></h2></div></Reveal><div className="industry-grid"><Reveal><div className="industry-feature"><Leaf /><span>01</span><h3>Agri & food processing</h3><p>Protect freshness, yield and shelf life from harvest to dispatch.</p><a href="#contact">Find your solution <ArrowRight /></a></div></Reveal><Reveal delay={90}><div className="industry-list"><div><Sprout /><span><strong>Dairy & cold chain</strong><small>Reliable cooling for every handoff.</small></span><ArrowRight /></div><div><Factory /><span><strong>Industrial process</strong><small>Stable temperatures for demanding lines.</small></span><ArrowRight /></div><div><Snowflake /><span><strong>Floriculture & pharma</strong><small>Precision environments for sensitive goods.</small></span><ArrowRight /></div></div></Reveal></div></div></section>
+
 
       <section className="contact section-pad" id="contact"><div className="page-width contact-inner"><Reveal><p className="eyebrow light-eyebrow"><span className="eyebrow-dot" /> Start a conversation</p><h2>Let&apos;s keep your<br /><em>business cool.</em></h2><p>Tell us what you&apos;re storing, cooling or scaling. We&apos;ll help you find the right configuration.</p></Reveal><Reveal delay={120} className="contact-card"><form onSubmit={(e) => e.preventDefault()}><label>Your name<input type="text" placeholder="Name" /></label><label>Work email<input type="email" placeholder="you@company.com" /></label><label>What are you looking to cool?<select defaultValue=""><option value="" disabled>Select an application</option><option>Cold storage</option><option>Industrial process cooling</option><option>Cold storage rental</option><option>Something else</option></select></label><button className="button button-primary" type="submit">Request a callback <ArrowRight /></button><small>We&apos;ll respond within one business day.</small></form></Reveal></div></section>
 
