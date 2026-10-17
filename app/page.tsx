@@ -21,11 +21,11 @@ import { useState } from 'react'
 
 const assets = {
   logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo_frozenhive-w40MJf3JetsicoxM-y2MXrbQkGq1sJw7qmCDu9vFjWVf6V4.png',
-  hero: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/front-m7VoJwB28ZFLB9VQ.png-xm1AAsUsiq7G0ALm10ARFKZ7kKI1kH.jpeg',
-  chiller: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/chiller-product-list_rev2-Tj6wD3vka2leVGHX-uSIkgK4WQSeL3E7F9EcRsDE2JERHCc.png',
-  portable: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portable-cold-storage-uUwRkp1GNGFZ58H9.png_1-WOOFhpwEINmDgllZL1BfcAzFqvVq8s.jpeg',
-  rental: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cold-storage-rental-CdPwGhfDHDeDXiVZ.png-tT5ey9bAGISG1RXQnoDJBr7yHhhTD6.png',
-  system: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/smart-cooling-system-1-B3caU84m1dtvX2fs-vh1j0KkfyNYTK1GPNUZSfiUwkJQdR4.png',
+  hero: '/images/frozenhive-hero.png',
+  chiller: '/images/frozenhive-chiller.png',
+  portable: '/images/frozenhive-coldroom.png',
+  rental: '/images/frozenhive-coldroom.png',
+  system: '/images/frozenhive-system.png',
 }
 
 function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
