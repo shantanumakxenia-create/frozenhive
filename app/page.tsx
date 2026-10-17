@@ -87,8 +87,8 @@ export default function Page() {
         <div className="hero-wash" />
         <div className="hero-content page-width">
           <Reveal><p className="eyebrow"><span className="eyebrow-dot" /> Intelligent cooling systems · Pune, India</p></Reveal>
-          <Reveal delay={80}><h1>Cold chain infrastructure, <em>engineered better.</em></h1></Reveal>
-          <Reveal delay={160}><p className="hero-copy">Cooling tower integrated chillers and modular cold storage designed to protect what matters — while using less energy to do it.</p></Reveal>
+          <Reveal delay={80}><h1>Picked this morning. <em>Still fresh next week.</em></h1></Reveal>
+          <Reveal delay={160}><p className="hero-copy">Practical cooling systems and modular cold storage designed to protect what matters — while using less energy to do it.</p></Reveal>
           <Reveal delay={240}><div className="hero-actions"><a className="button button-primary" href="#contact">Tell us what you need <ArrowRight /></a><a className="text-link" href="#technology">See how it works <ArrowDownRight /></a></div></Reveal>
           <Reveal delay={320}><div className="hero-proof"><div><strong>4–16°C</strong><span>controlled zones</span></div><div><strong>24/7</strong><span>temperature protection</span></div><div><strong>Made in India</strong><span>built for Indian conditions</span></div></div></Reveal>
         </div>
